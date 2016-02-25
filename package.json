@@ -1,0 +1,34 @@
+{
+  "name": "aintnorest.today_blog",
+  "version": "0.0.1",
+  "description": "Universal React Blog App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./bin/startServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aintnorest/Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aintnorest/Blog/issues"
+  },
+  "homepage": "https://github.com/aintnorest/Blog#readme",
+  "dependencies": {
+    "hapi": "^13.0.0",
+    "inert": "^3.2.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-register": "^6.5.2",
+    "piping": "^0.3.0"
+  }
+}
