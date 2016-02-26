@@ -1,0 +1,7 @@
+.wrap {
+    padding: 10px;
+    border: 2px;
+    @nest span & {
+        color: blue;
+    }
+}
