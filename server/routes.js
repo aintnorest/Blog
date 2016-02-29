@@ -3,6 +3,13 @@ import React from 'react';
 import Path from 'path';
 import Inert from 'inert';
 //
+import articleList from './articleList';
+import markdownCompiler from './markdownCompiler';
+//
+import Header from '../components/shells/Header';
+import SideBar from '../components/shells/SideBar';
+import PaginatedArticles from '../components/shells/PaginatedArticles';
+//
 export default function(server) {
     server.register(Inert, () => {});
     //
@@ -13,6 +20,8 @@ export default function(server) {
             handler: function (request, reply) {
                 const Html = require("../components/shells/html").default;
                 const props = {};
+                props.articles = [markdownCompiler()];
+                props.children = ([<Header {...props} />,<SideBar {...props} />,<PaginatedArticles {...props}/>])
                 const renderedHtml = ReactDOM.renderToString( <Html {...props} /> );
                 const response = `<!DOCTYPE html>${renderedHtml}`;
                 reply(response);
@@ -27,7 +36,18 @@ export default function(server) {
                     path: Path.normalize(__dirname + '/../static')
                 }
             }
-        }
+        },
+        {
+            method: 'GET',
+            path: '/request/articleList/{count?}',
+            handler: function(request, reply) {
+                if(request.params.count === undefined) console.log("no params");
+                console.log("request",request.params);
+                reply(articleList());
+
+            }
+        },
+
     ]);
     //
     return server;

@@ -19,10 +19,9 @@ export default function(props) {
                 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, width=device-width" />
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="msapplication-tap-highlight" content="no" />
-                {/*<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' /> */}
             </head>
             <body style={bodyS}>
-                <div>Hello World</div>
+                {props.children}
                 {/*<div id='root' dangerouslySetInnerHTML={{ __html: content }}/>
                 <div dangerouslySetInnerHTML={{ __html: this.props.scriptTag }} />
                 */}

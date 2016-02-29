@@ -1,4 +1,5 @@
 export default function* () {
+    require("./bin/startServer");
     yield this.start(["wbpck", "setupWatch"], { parallel: true });
 }
 
@@ -57,5 +58,7 @@ export function* wbpck() {
 
     yield this
         .source("client/index.js")
-        .webpack(webpackConfig)
+        .webpack(webpackConfig, null, (err, stats) => {
+            if(err) console.warn("webpack err: ",err);
+        })
 }

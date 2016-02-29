@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node ./bin/startServer.js"
+    "server": "node ./bin/startServer.js",
+    "start": "fly"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
     "hapi": "^13.0.0",
     "inert": "^3.2.0",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "remarkable": "^1.6.2"
   },
   "devDependencies": {
     "babel-loader": "^6.2.3",
@@ -35,7 +37,6 @@
     "fly-postcss": "^1.2.0",
     "fly-webpack": "^1.1.1",
     "piping": "^0.3.0",
-    "postcss-cssnext": "^2.4.0",
-    "postcss-nesting": "^2.3.0"
+    "postcss-cssnext": "^2.4.0"
   }
 }
