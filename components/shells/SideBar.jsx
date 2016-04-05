@@ -4,17 +4,20 @@ import ReactDOM from 'react-dom/server';
 
 export default function(props) {
     return (
-        <aside>
+        <aside className="SideBar">
             <section>
                 <h5>Links</h5>
                 <ul>
-                    <li><a href="#">Github</a></li>
-                    <li><a href="#">twitter</a></li>
+                    <li><a href="https://github.com/aintnorest">Github</a></li>
+                    <li><a href="https://twitter.com/CjAvizidrix">twitter</a></li>
                 </ul>
             </section>
             <section>
                 <h5>Most Recent Posts</h5>
-                {/*props need to pass in an array of the most recent 5 posts titles with links*/}
+                {props.articles.map((entry,i) => {
+                    let e = entry.split(".")[0].replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); });
+                    return <div key={i}>{e}</div>
+                })}
             </section>
         </aside>
     );
